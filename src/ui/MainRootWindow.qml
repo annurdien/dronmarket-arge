@@ -12,6 +12,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Dialogs  1.3
 import QtQuick.Layouts  1.11
 import QtQuick.Window   2.11
+import QtQuick.Shapes   1.0
 
 import QGroundControl               1.0
 import QGroundControl.Palette       1.0
@@ -37,10 +38,12 @@ ApplicationWindow {
             height  = ScreenTools.isMobile ? Screen.height : Math.min(150 * Screen.pixelDensity, Screen.height)
         }
 
-        // Start the sequence of first run prompt(s)
+    // Start the sequence of first run prompt(s)
         firstRunPromptManager.nextPrompt()
     }
 
+
+   // First Run Prompt Manager
     QtObject {
         id: firstRunPromptManager
 
@@ -123,24 +126,24 @@ ApplicationWindow {
         return _rgPreventViewSwitch[_rgPreventViewSwitch.length - 1]
     }
 
-    function viewSwitch(currentToolbar) {
+    function viewSwitch() {
         toolDrawer.visible      = false
         toolDrawer.toolSource   = ""
         flightView.visible      = false
         planView.visible        = false
-        toolbar.currentToolbar  = currentToolbar
+
     }
 
     function showFlyView() {
         if (!flightView.visible) {
             mainWindow.showPreFlightChecklistIfNeeded()
         }
-        viewSwitch(toolbar.flyViewToolbar)
+        viewSwitch()
         flightView.visible = true
     }
 
     function showPlanView() {
-        viewSwitch(toolbar.planViewToolbar)
+        viewSwitch()
         planView.visible = true
     }
 
@@ -323,18 +326,35 @@ ApplicationWindow {
     background: Item {
         id:             rootBackground
         anchors.fill:   parent
+        Image  {
+            source:         "qrc:/res/resources/MainWindowBackground.png"
+            anchors.fill:   parent
+            z:              0
+        }
     }
+
 
     //-------------------------------------------------------------------------
     /// Toolbar
+
     header: MainToolBar {
-        id:         toolbar
-        height:     ScreenTools.toolbarHeight
-        visible:    !QGroundControl.videoManager.fullScreen
+        id:             toolbar
+        height:         ScreenTools.toolbarHeight
+        visible:        !QGroundControl.videoManager.fullScreen
+        width:          parent.width * 0.85
+        anchors.right:  parent.right
+
     }
 
-    footer: LogReplayStatusBar {
-        visible: QGroundControl.settingsManager.flyViewSettings.showLogReplayStatusBar.rawValue
+
+    //------------------------------------------------------------------------
+    /// Bottom Navigation Bar
+    BottomNavigationBar {
+      id:testing
+      color:                      qgcPal.bottomNavigationBar
+      width:                      parent.width
+      height:                     ScreenTools.toolbarHeight
+      anchors.bottom:             parent.bottom
     }
 
     function showToolSelectDialog() {
@@ -465,15 +485,23 @@ ApplicationWindow {
         }
     }
 
+
+
     FlyView {
-        id:             flightView
-        anchors.fill:   parent
+        id:                 flightView
+        width:              parent.width * 0.85
+        height:             parent.height * 0.80
+        anchors.right:      parent.right
+
     }
 
     PlanView {
-        id:             planView
-        anchors.fill:   parent
-        visible:        false
+        id:                 planView
+        width:              parent.width * 0.85
+        height:             parent.height * 0.80
+        anchors.right:      parent.right
+        visible:            false
+
     }
 
     Drawer {
