@@ -357,6 +357,10 @@ ApplicationWindow {
       anchors.bottom:             parent.bottom
     }
 
+
+
+    //------------------------------------------------------------------------
+
     function showToolSelectDialog() {
         if (!mainWindow.preventViewSwitch()) {
             showPopupDialogFromComponent(toolSelectDialogComponent)
