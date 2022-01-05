@@ -358,6 +358,17 @@ ApplicationWindow {
     }
 
 
+    SwitchButton {
+        id: buttonswitch
+        anchors.left: rootBackground.left
+        anchors.leftMargin: 20
+        anchors.bottom: rootBackground.bottom
+        anchors.bottomMargin: 20
+
+
+    }
+
+
     function showToolSelectDialog() {
         if (!mainWindow.preventViewSwitch()) {
             showPopupDialogFromComponent(toolSelectDialogComponent)

@@ -2,3 +2,5 @@ Module Custom.Controls
 
 BottomNavBarButton                             1.0 BottomNavBarButton.qml
 BottomNavigationBar                            1.0 BottomNavigationBar.qml
+SwitchButton                                   1.0 SwitchButton.qml
+CustomButton                                   1.0 CustomButton.qml

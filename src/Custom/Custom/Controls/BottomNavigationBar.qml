@@ -29,7 +29,7 @@ Item {
         id:                         _trapezoid
 
         anchors.horizontalCenter:   _root.horizontalCenter
-        width:                      _root.width * 0.45
+        width:                      _root.width * 0.40
         height:                     _root.height
 
         Shape {
@@ -46,8 +46,8 @@ Item {
                 capStyle:               ShapePath.RoundCap
                 joinStyle:              ShapePath.RoundJoin
 
-                    PathLine { x: _root.width * 0.45; y: 0 }
-                    PathLine { x: _root.width * 0.45 + 100; y: _root.height }
+                    PathLine { x: _root.width * 0.40; y: 0 }
+                    PathLine { x: _root.width * 0.40 + 100; y: _root.height }
                     PathLine { x: -100; y: _root.height }
                     PathLine { x: 0; y: 0 }
             }
