@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file alias="Custom/Controls/BottomNavBarButton.qml">src/Custom/Custom/Controls/BottomNavBarButton.qml</file>
+        <file alias="Custom/Controls/BottomNavigationBar.qml">src/Custom/Custom/Controls/BottomNavigationBar.qml</file>
+        <file alias="Custom/Controls/qmldir">src/Custom/Custom/Controls/qmldir</file>
+    </qresource>
+</RCC>

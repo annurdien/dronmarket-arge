@@ -32,6 +32,7 @@ TEMPLATE = app
 QGCROOT  = $$PWD
 
 QML_IMPORT_PATH += $$PWD/src/QmlControls
+QML_IMPORT_PATH += $$PWD/src/Custom
 
 #
 # OS Specific settings
@@ -362,6 +363,7 @@ CustomBuild {
         $$PWD/qgcresources.qrc \
         $$PWD/qgcimages.qrc \
         $$PWD/resources/InstrumentValueIcons/InstrumentValueIcons.qrc \
+        $$PWD/custom.qrc \
 }
 
 #
@@ -399,6 +401,7 @@ INCLUDEPATH += \
     src/MissionManager \
     src/PositionManager \
     src/QmlControls \
+    src/Custom \
     src/QtLocationPlugin \
     src/QtLocationPlugin/QMLControl \
     src/Settings \
@@ -1525,7 +1528,10 @@ contains (CONFIG, QGC_DISABLE_INSTALLER_SETUP) {
 }
 
 DISTFILES += \
-    src/QmlControls/QGroundControl/Specific/qmldir
+    src/QmlControls/QGroundControl/Specific/qmldir \
+    src/Custom/Custom/Specific/qmldir
+
+
 
 #
 # Steps for "install" target on Linux

@@ -1,0 +1,4 @@
+Module Custom.Controls
+
+BottomNavBarButton                             1.0 BottomNavBarButton.qml
+BottomNavigationBar                            1.0 BottomNavigationBar.qml

@@ -20,6 +20,12 @@ import QGroundControl.ScreenTools   1.0
 import QGroundControl.FlightDisplay 1.0
 import QGroundControl.FlightMap     1.0
 
+
+// Custom Component
+import Custom.Controls              1.0
+
+
+
 /// @brief Native QML top level window
 /// All properties defined here are visible to all QML pages.
 ApplicationWindow {
@@ -463,6 +469,11 @@ ApplicationWindow {
                 }
             }
         }
+    }
+
+
+    BottomNavBarButton {
+
     }
 
     FlyView {
