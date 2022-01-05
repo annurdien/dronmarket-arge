@@ -106,14 +106,21 @@ Item {
         visible:            !multiVehiclePanelSelector.showSingleVehiclePanel
     }
 
+
+    // Compass and airspeed
     FlyViewInstrumentPanel {
         id:                         instrumentPanel
+
+        // Change this to enable
+        visible:                    false
+
+        //visible:                    QGroundControl.corePlugin.options.flyView.showInstrumentPanel && multiVehiclePanelSelector.showSingleVehiclePanel
+
         anchors.margins:            _toolsMargin
         anchors.top:                multiVehiclePanelSelector.visible ? multiVehiclePanelSelector.bottom : parent.top
         anchors.right:              parent.right
         width:                      _rightPanelWidth
         spacing:                    _toolsMargin
-        visible:                    QGroundControl.corePlugin.options.flyView.showInstrumentPanel && multiVehiclePanelSelector.showSingleVehiclePanel
         availableHeight:            parent.height - y - _toolsMargin
 
         property real rightInset: visible ? parent.width - x : 0
@@ -147,10 +154,14 @@ Item {
         property bool _verticalCenter: !QGroundControl.settingsManager.flyViewSettings.alternateInstrumentPanel.rawValue
     }
 
+    // Telematry value bar disabled
     TelemetryValuesBar {
         id:                 telemetryPanel
         x:                  recalcXPosition()
         anchors.margins:    _toolsMargin
+
+        // Change this to enable
+        visible:            false
 
         // States for custom layout support
         states: [

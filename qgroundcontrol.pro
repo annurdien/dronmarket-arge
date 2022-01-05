@@ -364,6 +364,7 @@ CustomBuild {
         $$PWD/qgcimages.qrc \
         $$PWD/resources/InstrumentValueIcons/InstrumentValueIcons.qrc \
         $$PWD/custom.qrc \
+        $$PWD/customresources.qrc \
 }
 
 #

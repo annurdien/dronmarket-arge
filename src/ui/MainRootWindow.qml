@@ -325,23 +325,38 @@ ApplicationWindow {
     }
 
     //-------------------------------------------------------------------------
-    /// Main, full window background (Fly View)
+    /// Main, full window background dark purple background
     background: Item {
         id:             rootBackground
         anchors.fill:   parent
+
+        Image {
+            source:         "qrc:/res/Custom/background.png"
+            anchors.fill:   parent
+            z:              0
+        }
     }
 
     //-------------------------------------------------------------------------
     /// Toolbar
     header: MainToolBar {
-        id:         toolbar
-        height:     ScreenTools.toolbarHeight
-        visible:    !QGroundControl.videoManager.fullScreen
+        id:             toolbar
+        height:         ScreenTools.toolbarHeight
+        visible:        !QGroundControl.videoManager.fullScreen
+        width:          parent.width * 0.85
+        anchors.right:  parent.right
     }
 
-    footer: LogReplayStatusBar {
-        visible: QGroundControl.settingsManager.flyViewSettings.showLogReplayStatusBar.rawValue
+    //------------------------------------------------------------------------
+    /// Bottom Navigation Bar
+    BottomNavigationBar {
+      id:                         bottomNavigationBar
+      color:                      qgcPal.bottomNavigationBar
+      width:                      parent.width
+      height:                     ScreenTools.toolbarHeight
+      anchors.bottom:             parent.bottom
     }
+
 
     function showToolSelectDialog() {
         if (!mainWindow.preventViewSwitch()) {
@@ -472,19 +487,19 @@ ApplicationWindow {
     }
 
 
-    BottomNavBarButton {
-
-    }
-
     FlyView {
-        id:             flightView
-        anchors.fill:   parent
+        id:                 flightView
+        width:              parent.width * 0.85
+        height:             parent.height * 0.80
+        anchors.right:      parent.right
     }
 
     PlanView {
-        id:             planView
-        anchors.fill:   parent
-        visible:        false
+        id:                 planView
+        width:              parent.width * 0.85
+        height:             parent.height * 0.80
+        anchors.right:      parent.right
+        visible:            false
     }
 
     Drawer {

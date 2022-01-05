@@ -64,7 +64,7 @@ Item {
                 id: _overView
                 text: "Overview"
                 color: "white"
-                source: "qrc:/res/OverviewIcon.svg"
+                source: "qrc:/icons/Overview.svg"
                 imageHeight: 30
                 imageWidth: 30
 
@@ -83,7 +83,7 @@ Item {
                 text: "Comms"
                 color: "white"
                 imageColor: "white"
-                source: "qrc:/res/CommsIcon.svg"
+                source: "qrc:/icons/Comms.svg"
                 imageHeight: 30
                 imageWidth: 30
 
@@ -104,7 +104,7 @@ Item {
                 text: "Radar"
                 color: "white"
                 imageColor: "white"
-                source: "qrc:/res/RadarIcon.svg"
+                source: "qrc:/icons/Radar.svg"
                 imageHeight: 30
                 imageWidth: 30
 
@@ -123,7 +123,7 @@ Item {
                 text: "Power"
                 color: "white"
                 imageColor: "white"
-                source: "qrc:/res/PowerIcon.svg"
+                source: "qrc:/icons/Battery.svg"
                 imageHeight: 30
                 imageWidth: 30
 
@@ -142,7 +142,7 @@ Item {
                 text: "Avoinics"
                 color: "white"
                 imageColor: "white"
-                source: "qrc:/res/AvionicsIcon.svg"
+                source: "qrc:/icons/Avoinics.svg"
                 imageHeight: 30
                 imageWidth: 30
 

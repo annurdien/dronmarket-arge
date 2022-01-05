@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/res">
+        <file alias="Custom/background.png">CustomResources/background.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="Avoinics.svg">CustomResources/CustomIcon/Avoinics.svg</file>
+        <file alias="Battery.svg">CustomResources/CustomIcon/Battery.svg</file>
+        <file alias="Comms.svg">CustomResources/CustomIcon/Comms.svg</file>
+        <file alias="Gnc.svg">CustomResources/CustomIcon/Gnc.svg</file>
+        <file alias="Mission.svg">CustomResources/CustomIcon/Mission.svg</file>
+        <file alias="Overview.svg">CustomResources/CustomIcon/Overview.svg</file>
+        <file alias="Radar.svg">CustomResources/CustomIcon/Radar.svg</file>
+    </qresource>
+</RCC>
