@@ -360,12 +360,19 @@ ApplicationWindow {
 
     SwitchButton {
         id: buttonswitch
-        anchors.left: rootBackground.left
+        anchors.left: parent.left
         anchors.leftMargin: 20
-        anchors.bottom: rootBackground.bottom
-        anchors.bottomMargin: 20
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 30
+        implicitWidth: parent.width * 0.20
+        implicitHeight: parent.height * 0.10
+    }
 
-
+    CustomButton {
+       anchors.right: parent.right
+       anchors.rightMargin: 20
+       anchors.bottom: parent.bottom
+       anchors.bottomMargin: 30
     }
 
 
