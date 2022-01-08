@@ -152,7 +152,11 @@ public:
     DEFINE_QGC_COLOR(toolbarBackground,             setToolbarBackground)
     DEFINE_QGC_COLOR(toolStripFGColor,              setToolStripFGColor)
     DEFINE_QGC_COLOR(toolStripHoverColor,           setToolStripHoverColor)
+
+    // Custom
     DEFINE_QGC_COLOR(bottomNavigationBar,           setBottomNavigationBarColor)
+    DEFINE_QGC_COLOR(colorWhite,                    setColorWhite)
+    DEFINE_QGC_COLOR(brandingDarkPurple,            setBrandingDarkPurple)
 
      QGCPalette(QObject* parent = nullptr);
     ~QGCPalette();

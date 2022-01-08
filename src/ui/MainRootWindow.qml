@@ -361,18 +361,22 @@ ApplicationWindow {
     SwitchButton {
         id: buttonswitch
         anchors.left: parent.left
-        anchors.leftMargin: 20
+        anchors.leftMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 30
+        anchors.bottomMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
         implicitWidth: parent.width * 0.20
-        implicitHeight: parent.height * 0.10
+        implicitHeight: ScreenTools.toolbarHeight * 0.70
     }
 
     CustomButton {
        anchors.right: parent.right
-       anchors.rightMargin: 20
+       anchors.rightMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
        anchors.bottom: parent.bottom
-       anchors.bottomMargin: 30
+       anchors.bottomMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 2
+
+       implicitWidth: parent.width * 0.10
+       implicitHeight: ScreenTools.toolbarHeight * 0.70
+       text: qsTr('Settings')
     }
 
 

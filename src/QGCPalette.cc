@@ -99,6 +99,8 @@ void QGCPalette::_buildMap()
 
     // Custom color (not affecting by theming or enable/disable)
     DECLARE_QGC_SINGLE_COLOR(bottomNavigationBar, "#1A1C48")
+    DECLARE_QGC_SINGLE_COLOR(colorWhite, "#ffffff")
+    DECLARE_QGC_SINGLE_COLOR(brandingDarkPurple, "#1A1C48")
 }
 
 void QGCPalette::setColorGroupEnabled(bool enabled)
