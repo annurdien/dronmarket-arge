@@ -23,6 +23,7 @@ import QGroundControl.FlightMap     1.0
 
 // Custom Component
 import Custom.Controls              1.0
+import Custom.Indicators            1.0
 
 
 
@@ -358,8 +359,10 @@ ApplicationWindow {
     }
 
 
+    //------------------------------------------------------------------------
+    /// Flight / Mission Switch
     SwitchButton {
-        id: buttonswitch
+        id: _missionSwitch
         anchors.left: parent.left
         anchors.leftMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
         anchors.bottom: parent.bottom
@@ -368,7 +371,10 @@ ApplicationWindow {
         implicitHeight: ScreenTools.toolbarHeight * 0.70
     }
 
+    //------------------------------------------------------------------------
+    /// Settings Button
     CustomButton {
+       id: _settingsButton
        anchors.right: parent.right
        anchors.rightMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
        anchors.bottom: parent.bottom
@@ -376,8 +382,20 @@ ApplicationWindow {
 
        implicitWidth: parent.width * 0.10
        implicitHeight: ScreenTools.toolbarHeight * 0.70
-       text: qsTr('Settings')
+       text: qsTr('SETTINGS')
     }
+
+
+    CustomSensorIndicator {
+
+        anchors.left: parent.left
+        anchors.top: parent.top
+        height: 50
+        width: 200
+        state: "awaiting"
+    }
+
+
 
 
     function showToolSelectDialog() {

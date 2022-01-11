@@ -33,9 +33,9 @@ Switch {
                     anchors.right: _indicator.right
 
                     Text {
-                        text:                       _root.leftText
+                        text:                       _root.rightText
                         color:                      qgcPal.colorWhite
-                        font.pointSize:             ScreenTools.smallFontPointSize * ScreenTools.smallFontPointRatio
+                        font.pointSize:             ScreenTools.platformFontPointSize * ScreenTools.smallFontPointRatio * 0.8
                         anchors.centerIn:           parent
                     }
                 }
@@ -46,9 +46,9 @@ Switch {
                     anchors.left: _indicator.left
 
                     Text {
-                        text:                       _root.rightText
+                        text:                       _root.leftText
                         color:                      qgcPal.colorWhite
-                        font.pointSize:             ScreenTools.smallFontPointSize * ScreenTools.smallFontPointRatio
+                        font.pointSize:             ScreenTools.platformFontPointSize * ScreenTools.smallFontPointRatio* 0.8
                         anchors.centerIn:           parent
 
                     }
@@ -71,7 +71,7 @@ Switch {
                         color:              "black"
                         leftPadding:        5
                         rightPadding:       5
-                        font.pointSize:     ScreenTools.smallFontPointSize * ScreenTools.smallFontPointRatio
+                        font.pointSize:     ScreenTools.platformFontPointSize * ScreenTools.smallFontPointRatio * 0.8
                 }
            }
      }

@@ -27,7 +27,7 @@ Button {
         elide: Text.ElideRight
 
         color: _root.checked ? "black" : qgcPal.colorWhite
-        font.pointSize:  ScreenTools.smallFontPointSize * ScreenTools.smallFontPointRatio
+        font.pointSize:  ScreenTools.defaultFontPointSize * ScreenTools.smallFontPointRatio
     }
 
     background: Rectangle {
