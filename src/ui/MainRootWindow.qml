@@ -159,6 +159,14 @@ ApplicationWindow {
         toolDrawer.visible      = true
     }
 
+
+
+    //// THIS
+    function showSettingsDrawer() {
+        rightDrawer.visible  = !rightDrawer.visible
+    }
+
+
     function showAnalyzeTool() {
         showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
     }
@@ -362,40 +370,40 @@ ApplicationWindow {
     //------------------------------------------------------------------------
     /// Flight / Mission Switch
     SwitchButton {
-        id: _missionSwitch
-        anchors.left: parent.left
-        anchors.leftMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
-        implicitWidth: parent.width * 0.20
-        implicitHeight: ScreenTools.toolbarHeight * 0.70
+        id:                     missionSwitch
+        anchors.left:           parent.left
+        anchors.leftMargin:     ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
+        anchors.bottom:         parent.bottom
+        anchors.bottomMargin:   ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
+        implicitWidth:          parent.width * 0.20
+        implicitHeight:         ScreenTools.toolbarHeight * 0.70
     }
 
     //------------------------------------------------------------------------
     /// Settings Button
     CustomButton {
-       id: _settingsButton
-       anchors.right: parent.right
-       anchors.rightMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
-       anchors.bottom: parent.bottom
-       anchors.bottomMargin: ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 2
+       id:                      settingsButton
+       anchors.right:           parent.right
+       anchors.rightMargin:     ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
+       anchors.bottom:          parent.bottom
+       anchors.bottomMargin:    ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 2
+       implicitWidth:           parent.width * 0.10
+       implicitHeight:          ScreenTools.toolbarHeight * 0.70
+       text:                    qsTr('SETTINGS')
+       onCheckedChanged: {
+            showSettingsDrawer()
+       }
 
-       implicitWidth: parent.width * 0.10
-       implicitHeight: ScreenTools.toolbarHeight * 0.70
-       text: qsTr('SETTINGS')
     }
 
-
-    CustomSensorIndicator {
-
-        anchors.left: parent.left
-        anchors.top: parent.top
-        height: 50
-        width: 200
-        state: "awaiting"
-    }
-
-
+    //------------------------------------------------------------------------
+    /// Left Sensor Indicator
+      LeftSensorIndicators {
+          id:                   leftSensorIndicator
+          anchors.top:          ScreenTools.defaultFontPixelHeight
+          anchors.left:         parent.left
+          anchors.leftMargin:   ScreenTools.defaultFontPixelWidth
+      }
 
 
     function showToolSelectDialog() {
@@ -540,6 +548,20 @@ ApplicationWindow {
         height:             parent.height * 0.80
         anchors.right:      parent.right
         visible:            false
+    }
+
+
+    Drawer {
+        id:             rightDrawer
+        height:         mainWindow.height * 0.82
+        width:          mainWindow.width  * 0.30
+        edge:           Qt.RightEdge
+        dragMargin:     0
+        closePolicy:    Drawer.NoAutoClose
+        interactive:    false
+        visible:        false
+        bottomMargin: 0
+
     }
 
     Drawer {

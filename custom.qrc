@@ -7,5 +7,6 @@
         <file alias="Custom/Controls/CustomButton.qml">src/Custom/Custom/Controls/CustomButton.qml</file>
         <file alias="Custom/Indicators/CustomSensorIndicator.qml">src/Custom/Custom/Indicators/CustomSensorIndicator.qml</file>
         <file alias="Custom/Indicators/qmldir">src/Custom/Custom/Indicators/qmldir</file>
+        <file alias="Custom/Indicators/LeftSensorIndicators.qml">src/Custom/Custom/Indicators/LeftSensorIndicators.qml</file>
     </qresource>
 </RCC>
