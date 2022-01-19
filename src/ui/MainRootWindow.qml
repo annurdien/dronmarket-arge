@@ -162,6 +162,7 @@ ApplicationWindow {
 
 
     //// THIS
+
     function showSettingsDrawer() {
         rightDrawer.visible  = !rightDrawer.visible
     }
@@ -561,6 +562,8 @@ ApplicationWindow {
         interactive:    false
         visible:        false
         bottomMargin: 0
+
+
 
     }
 
