@@ -8,5 +8,13 @@
         <file alias="Custom/Indicators/CustomSensorIndicator.qml">src/Custom/Custom/Indicators/CustomSensorIndicator.qml</file>
         <file alias="Custom/Indicators/qmldir">src/Custom/Custom/Indicators/qmldir</file>
         <file alias="Custom/Indicators/LeftSensorIndicators.qml">src/Custom/Custom/Indicators/LeftSensorIndicators.qml</file>
+        <file alias="Custom/Settings/qmldir">src/Custom/Custom/Settings/qmldir</file>
+        <file alias="Custom/Settings/OverviewSettings.qml">src/Custom/Custom/Settings/OverviewSettings.qml</file>
+        <file alias="Custom/Settings/AvoinicsSettings.qml">src/Custom/Custom/Settings/AvoinicsSettings.qml</file>
+        <file alias="Custom/Settings/PowerSettings.qml">src/Custom/Custom/Settings/PowerSettings.qml</file>
+        <file alias="Custom/Settings/RadarSystemSettings.qml">src/Custom/Custom/Settings/RadarSystemSettings.qml</file>
+        <file alias="Custom/Settings/SpreyingSystemSettings.qml">src/Custom/Custom/Settings/SpreyingSystemSettings.qml</file>
+        <file alias="Custom/Settings/GncSystemSettings.qml">src/Custom/Custom/Settings/GncSystemSettings.qml</file>
+        <file alias="Custom/Controls/CustomImageButton.qml">src/Custom/Custom/Controls/CustomImageButton.qml</file>
     </qresource>
 </RCC>

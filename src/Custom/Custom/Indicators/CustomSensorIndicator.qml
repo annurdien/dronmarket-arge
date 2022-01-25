@@ -57,7 +57,7 @@ Item {
                 color:              "orange"
                 source:             "qrc:/icons/CheckIcon.svg"
                 anchors.fill:       checkIcon
-        }
+            }
 
         }
             Rectangle {

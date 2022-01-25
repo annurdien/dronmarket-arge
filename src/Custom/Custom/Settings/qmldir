@@ -1,0 +1,8 @@
+Module Custom.Settings
+
+AvoinicsSettings                    1.0 AvoinicsSettings.qml
+GncSystemSettings                   1.0 GncSystemSettings.qml
+OverviewSettings                    1.0 OverviewSettings.qml
+PowerSettings                       1.0 PowerSettings.qml
+RadarSystemSettings                 1.0 RadarSystemSettings.qml
+SpreyingSystemSettings              1.0 SpreyingSystemSettings.qml

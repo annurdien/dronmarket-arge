@@ -163,10 +163,16 @@ ApplicationWindow {
 
     //// THIS
 
-    function showSettingsDrawer() {
+    function showRightDrawer(contentTitle, contentSource) {
+        rightDrawer.toolSource = contentSource
+        rightDrawer.toolTitle  = contentTitle
         rightDrawer.visible  = !rightDrawer.visible
     }
 
+    function showOverviewSettings() {
+        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml")
+
+    }
 
     function showAnalyzeTool() {
         showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
@@ -392,7 +398,7 @@ ApplicationWindow {
        implicitHeight:          ScreenTools.toolbarHeight * 0.70
        text:                    qsTr('SETTINGS')
        onCheckedChanged: {
-            showSettingsDrawer()
+            showOverviewSettings()
        }
 
     }
@@ -401,7 +407,7 @@ ApplicationWindow {
     /// Left Sensor Indicator
       LeftSensorIndicators {
           id:                   leftSensorIndicator
-          anchors.top:          ScreenTools.defaultFontPixelHeight
+          anchors.top:          parent.top
           anchors.left:         parent.left
           anchors.leftMargin:   ScreenTools.defaultFontPixelWidth
       }
@@ -554,14 +560,51 @@ ApplicationWindow {
 
     Drawer {
         id:             rightDrawer
-        height:         mainWindow.height * 0.82
-        width:          mainWindow.width  * 0.30
+        height:         parent.height * 0.83
+        width:          parent.width  * 0.30
         edge:           Qt.RightEdge
         dragMargin:     0
         closePolicy:    Drawer.NoAutoClose
         interactive:    false
         visible:        false
-        bottomMargin: 0
+        bottomMargin:   0
+        background:     Rectangle {color: qgcPal.brandingDarkPurple}
+
+        property alias toolTitle:   label.text
+        property alias toolSource:  rightDrawerLoader.source
+
+        Rectangle {
+            anchors.left: parent.left
+            anchors.bottom: parent.bottom
+            anchors.top: parent.top
+            width: ScreenTools.defaultFontPixelWidth * 0.15
+            color: "white"
+        }
+
+
+        Text {
+            id:                         label
+            text:                       qsTr("Drone Setting")
+            font.pointSize:             ScreenTools.largeFontPointSize
+            color:                      qgcPal.colorWhite
+            anchors.top:                parent.top
+            anchors.horizontalCenter:   parent.horizontalCenter
+            anchors.topMargin:          ScreenTools.defaultFontPixelHeight * 0.5
+        }
+
+        Loader {
+            id:                  rightDrawerLoader
+            anchors.left:        parent.left
+            anchors.top:         parent.top
+            anchors.topMargin:   ScreenTools.defaultFontPixelHeight * 2
+            anchors.leftMargin:  ScreenTools.defaultFontPixelWidth
+
+            Connections {
+                target:                 rightDrawerLoader.item
+                ignoreUnknownSignals:   true
+                onPopout:               rightDrawer.visible = false
+            }
+        }
 
 
 
