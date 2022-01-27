@@ -8,11 +8,13 @@ import Custom.Indicators            1.0
 
 Item {
     id: _root
+    anchors.fill: parent
 
     ColumnLayout {
         id: leftSensorRow
+        anchors.fill: parent
 
-        spacing: ScreenTools.defaultFontPixelHeight * 2.5
+        spacing: (parent.height/5) - ScreenTools.defaultFontPixelHeight * 2.5
 
         CustomSensorIndicator {
             height: ScreenTools.defaultFontPixelHeight * 0.1

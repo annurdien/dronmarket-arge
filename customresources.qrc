@@ -11,5 +11,6 @@
         <file alias="Overview.svg">CustomResources/CustomIcon/Overview.svg</file>
         <file alias="Radar.svg">CustomResources/CustomIcon/Radar.svg</file>
         <file alias="CheckIcon.svg">CustomResources/CustomIcon/CheckIcon.svg</file>
+        <file alias="Spreying.svg">CustomResources/CustomIcon/Spreying.svg</file>
     </qresource>
 </RCC>

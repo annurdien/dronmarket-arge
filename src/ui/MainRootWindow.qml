@@ -151,6 +151,7 @@ ApplicationWindow {
         planView.visible = true
     }
 
+
     function showTool(toolTitle, toolSource, toolIcon) {
         toolDrawer.backIcon     = flightView.visible ? "/qmlimages/PaperPlane.svg" : "/qmlimages/Plan.svg"
         toolDrawer.toolTitle    = toolTitle
@@ -160,8 +161,8 @@ ApplicationWindow {
     }
 
 
-
-    //// THIS
+    //-------------------------------------------------------------------------
+    //-- Custom Function to handle UI
 
     function showRightDrawer(contentTitle, contentSource) {
         rightDrawer.toolSource = contentSource
@@ -170,9 +171,11 @@ ApplicationWindow {
     }
 
     function showOverviewSettings() {
-        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml")
+        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/OverviewSettings.qml")
 
     }
+
+
 
     function showAnalyzeTool() {
         showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
@@ -351,6 +354,18 @@ ApplicationWindow {
             anchors.fill:   parent
             z:              0
         }
+
+        //------------------------------------------------------------------------
+        /// Left Sensor Indicator
+          LeftSensorIndicators {
+              id:                   leftSensorIndicator
+              anchors.top:          parent.top
+              anchors.left:         parent.left
+              anchors.bottom:       parent.bottom
+              anchors.topMargin:    ScreenTools.defaultFontPixelWidth
+              anchors.leftMargin:   ScreenTools.defaultFontPixelWidth * 1.5
+              anchors.bottomMargin: parent.height * 0.20 + ScreenTools.defaultFontPixelWidth
+          }
     }
 
     //-------------------------------------------------------------------------
@@ -402,16 +417,6 @@ ApplicationWindow {
        }
 
     }
-
-    //------------------------------------------------------------------------
-    /// Left Sensor Indicator
-      LeftSensorIndicators {
-          id:                   leftSensorIndicator
-          anchors.top:          parent.top
-          anchors.left:         parent.left
-          anchors.leftMargin:   ScreenTools.defaultFontPixelWidth
-      }
-
 
     function showToolSelectDialog() {
         if (!mainWindow.preventViewSwitch()) {
@@ -584,20 +589,24 @@ ApplicationWindow {
 
         Text {
             id:                         label
-            text:                       qsTr("Drone Setting")
-            font.pointSize:             ScreenTools.largeFontPointSize
-            color:                      qgcPal.colorWhite
             anchors.top:                parent.top
             anchors.horizontalCenter:   parent.horizontalCenter
             anchors.topMargin:          ScreenTools.defaultFontPixelHeight * 0.5
+            text:                       qsTr("Drone Setting")
+            font.pointSize:             ScreenTools.largeFontPointSize
+            color:                      qgcPal.colorWhite
+
         }
 
         Loader {
-            id:                  rightDrawerLoader
-            anchors.left:        parent.left
-            anchors.top:         parent.top
-            anchors.topMargin:   ScreenTools.defaultFontPixelHeight * 2
-            anchors.leftMargin:  ScreenTools.defaultFontPixelWidth
+            id:                     rightDrawerLoader
+            anchors.left:           parent.left
+            anchors.top:            parent.top
+            anchors.topMargin:      ScreenTools.defaultFontPixelHeight * 2
+            anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+            anchors.right:          parent.right
+            anchors.bottom:         parent.bottom
+            anchors.bottomMargin:   ScreenTools.defaultFontPixelHeight
 
             Connections {
                 target:                 rightDrawerLoader.item

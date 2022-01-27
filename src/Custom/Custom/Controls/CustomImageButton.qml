@@ -59,7 +59,7 @@ Button {
     background: Rectangle {
             id :                _background
             implicitHeight:     ScreenTools.defaultFontPixelHeight * 2.5
-            implicitWidth:      ScreenTools.defaultFontPixelWidth * 15
+            implicitWidth:      ScreenTools.defaultFontPixelWidth * 30
             opacity:            enabled ? 1 : 0.3
             color:              _root.down ? qgcPal.colorGrey : "transparent"
             border.width:       1
