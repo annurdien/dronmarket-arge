@@ -2,3 +2,4 @@ Module Custom.Indicators
 
 CustomSensorIndicator                      1.0 CustomSensorIndicator.qml
 LeftSensorIndicators                       1.0 LeftSensorIndicators.qml
+CustomProgressBarIndicator                 1.0 CustomProgressBarIndicator.qml

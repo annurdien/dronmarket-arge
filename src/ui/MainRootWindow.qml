@@ -164,18 +164,21 @@ ApplicationWindow {
     //-------------------------------------------------------------------------
     //-- Custom Function to handle UI
 
-    function showRightDrawer(contentTitle, contentSource) {
+    function showRightDrawer(contentTitle, contentSource, iconLabelVisible) {
         rightDrawer.toolSource = contentSource
         rightDrawer.toolTitle  = contentTitle
+        rightDrawer.labelVisible = iconLabelVisible;
+    }
+
+
+    function showOverviewSettings() {
+        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/OverviewSettings.qml", false)
         rightDrawer.visible  = !rightDrawer.visible
     }
 
-    function showOverviewSettings() {
-        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/OverviewSettings.qml")
-
+    function showAvoinicsSettings() {
+        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml", true)
     }
-
-
 
     function showAnalyzeTool() {
         showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
@@ -575,17 +578,18 @@ ApplicationWindow {
         bottomMargin:   0
         background:     Rectangle {color: qgcPal.brandingDarkPurple}
 
-        property alias toolTitle:   label.text
-        property alias toolSource:  rightDrawerLoader.source
+        property alias toolTitle:       label.text
+        property alias toolSource:      rightDrawerLoader.source
+        property alias labelVisible:    imageLabel.visible
 
         Rectangle {
-            anchors.left: parent.left
+            id:             leftBorder
+            anchors.left:   parent.left
             anchors.bottom: parent.bottom
-            anchors.top: parent.top
-            width: ScreenTools.defaultFontPixelWidth * 0.15
-            color: "white"
+            anchors.top:    parent.top
+            width:          ScreenTools.defaultFontPixelWidth * 0.15
+            color:          qgcPal.colorWhite
         }
-
 
         Text {
             id:                         label
@@ -598,10 +602,59 @@ ApplicationWindow {
 
         }
 
+        Item {
+                id:                 imageLabel
+                anchors.top:        label.bottom
+                anchors.left:       parent.left
+                anchors.right:      parent.right
+                anchors.leftMargin: ScreenTools.defaultFontPixelWidth
+                anchors.topMargin:  ScreenTools.defaultFontPixelHeight
+                height:             ScreenTools.defaultFontPixelWidth * 5
+                visible: false
+
+                RowLayout {
+                        Item {
+
+                            width: ScreenTools.defaultFontPixelWidth * 5
+                            height: ScreenTools.defaultFontPixelWidth * 5
+
+                            QGCColoredImage {
+                                id:                 labelIcon
+                                anchors.centerIn:   parent
+                                source:             "qrc:/icons/Avoinics.svg"
+                                anchors.fill:       parent
+                            }
+                        }
+
+                        Text {
+                                id:                     imageLabelText
+                                text:                   "Avoinics"
+                                horizontalAlignment:    Text.AlignHCenter
+                                verticalAlignment:      Text.AlignVCenter
+                                elide:                  Text.ElideRight
+                                color:                  qgcPal.colorWhite
+                                font.pointSize:         ScreenTools.defaultFontPointSize * ScreenTools.mediumFontPointRatio
+
+                                Layout.alignment: Qt.AlignHCenter
+                         }
+
+                    }
+            }
+
+        Rectangle {
+            id:                 bottomDivider
+            anchors.top:        imageLabel.bottom
+            anchors.left:       parent.left
+            anchors.right:      parent.right
+            anchors.topMargin:  ScreenTools.defaultFontPixelHeight * 0.2
+            height:             ScreenTools.defaultFontPixelHeight * 0.1
+            visible:            imageLabel.visible
+        }
+
         Loader {
             id:                     rightDrawerLoader
             anchors.left:           parent.left
-            anchors.top:            parent.top
+            anchors.top:            imageLabel.visible ? bottomDivider.bottom :  parent.top
             anchors.topMargin:      ScreenTools.defaultFontPixelHeight * 2
             anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
             anchors.right:          parent.right

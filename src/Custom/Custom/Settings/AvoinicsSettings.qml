@@ -9,16 +9,16 @@ import Custom.Indicators            1.0
 Item {
     ColumnLayout {
 
-        CustomImageButton {
-            text:                    qsTr('Avoinics')
-        }
+//        CustomImageButton {
+//            text:                    qsTr('Avoinics')
+//        }
 
-        CustomImageButton {
-            text:                    qsTr('Avoinics')
-        }
+//        CustomImageButton {
+//            text:                    qsTr('Avoinics')
+//        }
 
-        CustomImageButton {
-            text:                    qsTr('Avoinics')
-        }
+//        CustomImageButton {
+//            text:                    qsTr('Avoinics')
+//        }
     }
 }

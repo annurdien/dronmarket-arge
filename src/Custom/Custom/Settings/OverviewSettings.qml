@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts  1.15
 
+import QGroundControl               1.0
 import QGroundControl.ScreenTools   1.0
 
 // Custom Component
@@ -9,16 +10,18 @@ import Custom.Indicators            1.0
 
 Item {
     id: _root
+
     anchors.fill: parent
 
     ColumnLayout {
-        id:           settingButtons
-        anchors.fill: parent
-        spacing: (parent.height / 6) - ScreenTools.defaultFontPixelHeight * 2.5
+        id:             settingButtons
+        anchors.fill:   parent
+        spacing:        (parent.height / 6) - ScreenTools.defaultFontPixelHeight * 2.5
 
         CustomImageButton {
             id:            avoinicsButton
             text:          qsTr('Avoinics')
+            onClicked:     { mainWindow.showAvoinicsSettings() }
         }
 
         CustomImageButton {

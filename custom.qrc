@@ -16,5 +16,6 @@
         <file alias="Custom/Settings/SpreyingSystemSettings.qml">src/Custom/Custom/Settings/SpreyingSystemSettings.qml</file>
         <file alias="Custom/Settings/GncSystemSettings.qml">src/Custom/Custom/Settings/GncSystemSettings.qml</file>
         <file alias="Custom/Controls/CustomImageButton.qml">src/Custom/Custom/Controls/CustomImageButton.qml</file>
+        <file alias="Custom/Indicators/CustomProgressBarIndicator.qml">src/Custom/Custom/Indicators/CustomProgressBarIndicator.qml</file>
     </qresource>
 </RCC>

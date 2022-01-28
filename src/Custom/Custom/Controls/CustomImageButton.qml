@@ -28,17 +28,16 @@ Button {
 
         RowLayout {
                 Item {
+
                     width: ScreenTools.defaultFontPixelWidth * 5
                     height: ScreenTools.defaultFontPixelWidth * 5
 
                     QGCColoredImage {
-
                         id:                 icon
                         anchors.centerIn:   parent
                         source:             _root.imageSource
                         anchors.fill:       parent
                     }
-
                 }
 
                 Text {
