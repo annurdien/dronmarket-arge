@@ -167,18 +167,41 @@ ApplicationWindow {
     function showRightDrawer(contentTitle, contentSource, iconLabelVisible) {
         rightDrawer.toolSource = contentSource
         rightDrawer.toolTitle  = contentTitle
-        rightDrawer.labelVisible = iconLabelVisible;
+        rightDrawer.labelVisible = iconLabelVisible
+
+        if(!settingsButton.checked && !rightDrawer.visible) {
+          settingsButton.checked = true
+          rightDrawer.visible = true
+        }
     }
 
+    function rightDrawerSwitch(currentNavbarIndex) {
+        switch(currentNavbarIndex) {
+        case 0:
+            showOverviewSettings()
+        break
+        case 1:
+            showCommsSettings()
+        break
+        case 4:
+            showAvoinicsSettings()
+        }
+    }
 
     function showOverviewSettings() {
         showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/OverviewSettings.qml", false)
-        rightDrawer.visible  = !rightDrawer.visible
     }
 
     function showAvoinicsSettings() {
         showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml", true)
     }
+
+    function showCommsSettings() {
+
+    }
+
+
+    //-------------------------------------------------------------------------
 
     function showAnalyzeTool() {
         showTool(qsTr("Analyze Tools"), "AnalyzeView.qml", "/qmlimages/Analyze.svg")
@@ -191,6 +214,7 @@ ApplicationWindow {
     function showSettingsTool() {
         showTool(qsTr("Application Settings"), "AppSettings.qml", "/res/QGCLogoWhite")
     }
+
 
     //-------------------------------------------------------------------------
     //-- Global simple message dialog
@@ -416,7 +440,8 @@ ApplicationWindow {
        implicitHeight:          ScreenTools.toolbarHeight * 0.70
        text:                    qsTr('SETTINGS')
        onCheckedChanged: {
-            showOverviewSettings()
+            rightDrawerSwitch(bottomNavigationBar.currentNavbarIndex)
+            rightDrawer.visible = !rightDrawer.visible
        }
 
     }

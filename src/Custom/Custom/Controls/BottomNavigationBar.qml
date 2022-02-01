@@ -9,10 +9,10 @@ Item {
 
 
     property    color       color
-    property    real        _currentNavbarIndex:        0
+    property    real        currentNavbarIndex:        0
 
     function updateCurrentIndex(index) {
-        _currentNavbarIndex = index;
+        currentNavbarIndex = index;
     }
 
 
@@ -71,10 +71,10 @@ Item {
                 Layout.minimumWidth: 10
                 Layout.minimumHeight: 50
 
-                state: _currentNavbarIndex === 0 ? "selected" : ""
+                state: currentNavbarIndex === 0 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(0)
-
+                        mainWindow.showOverviewSettings()
                 }
             }
 
@@ -90,7 +90,7 @@ Item {
                 Layout.minimumWidth: 10
                 Layout.minimumHeight: 50
 
-                state: _currentNavbarIndex === 1 ? "selected" : ""
+                state: currentNavbarIndex === 1 ? "selected" : ""
                 onClicked: {
 
                         _root.updateCurrentIndex(1)
@@ -111,7 +111,7 @@ Item {
                 Layout.minimumWidth: 10
                 Layout.minimumHeight: 50
 
-                state: _currentNavbarIndex === 2 ? "selected" : ""
+                state: currentNavbarIndex === 2 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(2)
 
@@ -130,7 +130,7 @@ Item {
                 Layout.minimumWidth: 10
                 Layout.minimumHeight: 50
 
-                state: _currentNavbarIndex === 3 ? "selected" : ""
+                state: currentNavbarIndex === 3 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(3)
 
@@ -149,9 +149,10 @@ Item {
                 Layout.minimumWidth: 10
                 Layout.minimumHeight: 50
 
-                state: _currentNavbarIndex === 4 ? "selected" : ""
+                state: currentNavbarIndex === 4 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(4)
+                        mainWindow.showAvoinicsSettings()
 
                 }
             }
