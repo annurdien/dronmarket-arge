@@ -101,6 +101,8 @@ void QGCPalette::_buildMap()
     DECLARE_QGC_SINGLE_COLOR(bottomNavigationBar, "#1A1C48")
     DECLARE_QGC_SINGLE_COLOR(colorWhite, "#ffffff")
     DECLARE_QGC_SINGLE_COLOR(brandingDarkPurple, "#1A1C48")
+    DECLARE_QGC_SINGLE_COLOR(customProgressBarBackground, "#339499C3")
+    DECLARE_QGC_SINGLE_COLOR(customProgressBarItem, "#298BFE")
 }
 
 void QGCPalette::setColorGroupEnabled(bool enabled)

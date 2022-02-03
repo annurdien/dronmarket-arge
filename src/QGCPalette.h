@@ -157,6 +157,8 @@ public:
     DEFINE_QGC_COLOR(bottomNavigationBar,           setBottomNavigationBarColor)
     DEFINE_QGC_COLOR(colorWhite,                    setColorWhite)
     DEFINE_QGC_COLOR(brandingDarkPurple,            setBrandingDarkPurple)
+    DEFINE_QGC_COLOR(customProgressBarBackground,   setCustomProgressBarBackground)
+    DEFINE_QGC_COLOR(customProgressBarItem,         setCustomProgressBarItem)
 
      QGCPalette(QObject* parent = nullptr);
     ~QGCPalette();

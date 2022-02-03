@@ -678,13 +678,13 @@ ApplicationWindow {
 
         Loader {
             id:                     rightDrawerLoader
-            anchors.left:           parent.left
-            anchors.top:            imageLabel.visible ? bottomDivider.bottom :  parent.top
-            anchors.topMargin:      ScreenTools.defaultFontPixelHeight * 2
-            anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
+            anchors.left:           leftBorder.left
+            anchors.top:            imageLabel.visible ? bottomDivider.bottom :  label.top
+            anchors.topMargin:      ScreenTools.defaultFontPixelHeight
             anchors.right:          parent.right
             anchors.bottom:         parent.bottom
             anchors.bottomMargin:   ScreenTools.defaultFontPixelHeight
+            anchors.leftMargin:     ScreenTools.defaultFontPixelWidth
 
             Connections {
                 target:                 rightDrawerLoader.item
