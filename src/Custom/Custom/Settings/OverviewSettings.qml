@@ -28,6 +28,7 @@ Item {
             id:          powerButton
             text:         qsTr('Power')
             imageSource: "qrc:/icons/Battery.svg"
+            onClicked: { mainWindow.showPowerSettings() }
         }
 
         CustomImageButton {

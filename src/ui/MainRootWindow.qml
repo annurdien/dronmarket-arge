@@ -164,10 +164,11 @@ ApplicationWindow {
     //-------------------------------------------------------------------------
     //-- Custom Function to handle UI
 
-    function showRightDrawer(contentTitle, contentSource, iconLabelVisible) {
+    function showRightDrawer(contentTitle, contentSource, iconLabelVisible, labelSource) {
         rightDrawer.toolSource = contentSource
         rightDrawer.toolTitle  = contentTitle
         rightDrawer.labelVisible = iconLabelVisible
+        rightDrawer.labelIcon = labelSource
 
         if(!settingsButton.checked && !rightDrawer.visible) {
           settingsButton.checked = true
@@ -183,17 +184,24 @@ ApplicationWindow {
         case 1:
             showCommsSettings()
         break
+        case 3:
+            showPowerSettings()
+        break
         case 4:
             showAvoinicsSettings()
         }
     }
 
     function showOverviewSettings() {
-        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/OverviewSettings.qml", false)
+        showRightDrawer(qsTr(""),"qrc:/qml/Custom/Settings/OverviewSettings.qml", false, "")
     }
 
     function showAvoinicsSettings() {
-        showRightDrawer(qsTr("Drone Settings"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml", true)
+        showRightDrawer(qsTr("Avoinics"),"qrc:/qml/Custom/Settings/AvoinicsSettings.qml", true, "qrc:/icons/Avoinics.svg")
+    }
+
+    function showPowerSettings() {
+        showRightDrawer(qsTr("Power"),"qrc:/qml/Custom/Settings/PowerSettings.qml", true, "qrc:/icons/Battery.svg")
     }
 
     function showCommsSettings() {
@@ -603,9 +611,10 @@ ApplicationWindow {
         bottomMargin:   0
         background:     Rectangle {color: qgcPal.brandingDarkPurple}
 
-        property alias toolTitle:       label.text
+        property alias toolTitle:       imageLabelText.text
         property alias toolSource:      rightDrawerLoader.source
         property alias labelVisible:    imageLabel.visible
+        property alias labelIcon:       labelIcon.source
 
         Rectangle {
             id:             leftBorder
@@ -635,7 +644,7 @@ ApplicationWindow {
                 anchors.leftMargin: ScreenTools.defaultFontPixelWidth
                 anchors.topMargin:  ScreenTools.defaultFontPixelHeight
                 height:             ScreenTools.defaultFontPixelWidth * 5
-                visible: false
+                visible:            false
 
                 RowLayout {
                         Item {
@@ -646,7 +655,6 @@ ApplicationWindow {
                             QGCColoredImage {
                                 id:                 labelIcon
                                 anchors.centerIn:   parent
-                                source:             "qrc:/icons/Avoinics.svg"
                                 anchors.fill:       parent
                             }
                         }

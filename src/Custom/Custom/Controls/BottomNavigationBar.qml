@@ -133,6 +133,7 @@ Item {
                 state: currentNavbarIndex === 3 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(3)
+                        mainWindow.showPowerSettings()
 
                 }
             }

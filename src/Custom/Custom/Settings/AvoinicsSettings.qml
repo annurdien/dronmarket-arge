@@ -44,10 +44,12 @@ Item {
             Item {
                 Layout.minimumWidth: name.width
                 Layout.maximumHeight: 30
-                Button {
+                CustomButton {
                     height: 30
                     width: name.width
                     text: "CALIBRATE IMU"
+                    buttonColor: down ? "grey": "white"
+                    textColor: "black"
                 }
             }
 
@@ -55,7 +57,9 @@ Item {
                 Layout.minimumWidth: name.width
                 Layout.maximumHeight: 10
                 leadingText: "Compass 1"
-                trailingText: "Error"
+                trailingText: "Mag Err"
+                state: "error"
+                value: 0
             }
 
             CustomProgressBarIndicator {
@@ -63,6 +67,7 @@ Item {
                 Layout.maximumHeight: 10
                 leadingText: "Compass 2"
                 trailingText: "220.7"
+                state: "warning"
             }
 
             CustomProgressBarIndicator {
@@ -70,15 +75,19 @@ Item {
                 Layout.maximumHeight: 10
                 leadingText: "Compass 3"
                 trailingText: "12.0"
+                state: "normal"
+                value: 0.2
             }
 
             Item {
                 Layout.minimumWidth: name.width
                 Layout.maximumHeight: 30
-                Button {
+                CustomButton {
                     height: 30
                     width: name.width
                     text: "CALIBRATE COMPASS"
+                    buttonColor: down ? "grey": "white"
+                    textColor: "black"
                 }
             }
         }

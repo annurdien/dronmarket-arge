@@ -12,11 +12,30 @@ Item {
     property alias implicitHeight:      background.implicitHeight
     property alias leadingText:         leading.text
     property alias trailingText:        trailing.text
+    property alias value:               progressBar.value
 
     QGCPalette {id : qgcPal }
 
     anchors.leftMargin:     10
     anchors.rightMargin:    10
+
+
+    states: [
+        State {
+            name: "warning"
+            PropertyChanges {target:trailing;   color:"#FFD630"}
+        },
+
+        State {
+            name: "error"
+            PropertyChanges {target:trailing;   color:"#E72D2D"}
+        },
+
+        State {
+            name: "normal"
+            PropertyChanges {target:trailing;   color:"#40C110"}
+        }
+    ]
 
     RowLayout {
         anchors.fill: parent
@@ -38,7 +57,7 @@ Item {
 
             background: Rectangle {
                 id:             background
-                implicitWidth:  _root.width - (leading.implicitWidth + trailing.implicitWidth + ScreenTools.defaultFontPixelWidth * 10)
+                implicitWidth:  _root.width - (ScreenTools.defaultFontPixelWidth * 20)
                 implicitHeight: 3
                 color:          qgcPal.customProgressBarBackground
                 radius:         3

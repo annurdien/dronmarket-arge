@@ -11,8 +11,10 @@ Button {
     property string     leftText:           "FLIGHT MANAGER"
     property string     rightText:          "MISSION MANAGER"
 
-    property alias      implicitWidth:      _background.implicitWidth
-    property alias      implicitHeight:     _background.implicitHeight
+    property alias      implicitWidth:      background.implicitWidth
+    property alias      implicitHeight:     background.implicitHeight
+    property alias      buttonColor:        background.color
+    property alias      textColor:          buttonText.color
 
     QGCPalette { id: qgcPal }
 
@@ -21,6 +23,7 @@ Button {
     checkable: true
 
     contentItem: Text {
+        id: buttonText
         text: _root.text
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
@@ -31,7 +34,7 @@ Button {
     }
 
     background: Rectangle {
-        id : _background
+        id : background
         implicitWidth: 100
         implicitHeight: 40
         opacity: enabled ? 1 : 0.3
