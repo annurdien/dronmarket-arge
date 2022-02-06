@@ -4,6 +4,7 @@ import QtQuick.Layouts  1.15
 import QGroundControl               1.0
 import QGroundControl.ScreenTools   1.0
 
+
 // Custom Component
 import Custom.Controls              1.0
 import Custom.Indicators            1.0
@@ -35,24 +36,28 @@ Item {
             id:          radarButton
             text:        qsTr('Radar System')
             imageSource: "qrc:/icons/Radar.svg"
+            onClicked: { mainWindow.showRadarSettings() }
         }
 
         CustomImageButton {
             id:          spreyingButton
             text:        qsTr('Spreying System')
             imageSource: "qrc:/icons/Spreying.svg"
+            onClicked: { mainWindow.showSpreyingSettings() }
         }
 
         CustomImageButton {
             id:          gncButton
             text:        qsTr('Global Navigation System')
             imageSource: "qrc:/icons/Gnc.svg"
+            onClicked: { mainWindow.showGncSettings() }
         }
 
         CustomImageButton {
-            id:          commButton
+            id:          commsButton
             text:        qsTr('Comminication')
             imageSource: "qrc:/icons/Comms.svg"
+            onClicked: { mainWindow.showCommsSettings() }
         }
     }
 }

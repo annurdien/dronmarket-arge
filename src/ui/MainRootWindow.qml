@@ -184,6 +184,9 @@ ApplicationWindow {
         case 1:
             showCommsSettings()
         break
+        case 2:
+            showRadarSettings()
+        break
         case 3:
             showPowerSettings()
         break
@@ -205,8 +208,21 @@ ApplicationWindow {
     }
 
     function showCommsSettings() {
-
+        showRightDrawer(qsTr("Communications"),"qrc:/qml/Custom/Settings/PowerSettings.qml", true, "qrc:/icons/Battery.svg")
     }
+
+    function showRadarSettings() {
+        showRightDrawer(qsTr("Radar System"),"qrc:/qml/Custom/Settings/RadarSystemSettings.qml", true, "qrc:/icons/Radar.svg")
+    }
+
+    function showSpreyingSettings() {
+        showRightDrawer(qsTr("Spreying"),"qrc:/qml/Custom/Settings/SpreyingSystemSettings.qml", true, "qrc:/icons/Spreying.svg")
+    }
+
+    function showGncSettings() {
+        showRightDrawer(qsTr("Global Navigation System"),"qrc:/qml/Custom/Settings/GncSystemSettings.qml", true, "qrc:/icons/Gnc.svg")
+    }
+
 
 
     //-------------------------------------------------------------------------

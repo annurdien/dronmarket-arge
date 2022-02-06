@@ -94,6 +94,7 @@ Item {
                 onClicked: {
 
                         _root.updateCurrentIndex(1)
+                        mainWindow.showCommsSettings()
 
                 }
 
@@ -114,6 +115,7 @@ Item {
                 state: currentNavbarIndex === 2 ? "selected" : ""
                 onClicked: {
                         _root.updateCurrentIndex(2)
+                        mainWindow.showRadarSettings()
 
                 }
             }

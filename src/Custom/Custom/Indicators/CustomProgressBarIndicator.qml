@@ -40,24 +40,27 @@ Item {
     RowLayout {
         anchors.fill: parent
 
-        Text {
-            id:             leading
-            text:           qsTr("Heading")
-            font.pointSize: ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
-            color:          qgcPal.colorWhite
-
+        Item {
+            height: ScreenTools.defaultFontPixelHeight
+            width: ScreenTools.defaultFontPixelWidth * 10
+            Text {
+                id:             leading
+                text:           qsTr("Heading")
+                font.pointSize: ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
+                color:          qgcPal.colorWhite
+            }
             Layout.alignment: Qt.AlignLeft
-        }
 
+        }
         ProgressBar {
             id:         progressBar
             value:      0.5
 
-            Layout.alignment: Qt.AlignCenter
+            Layout.alignment: Qt.AlignHCenter
 
             background: Rectangle {
                 id:             background
-                implicitWidth:  _root.width - (ScreenTools.defaultFontPixelWidth * 20)
+                implicitWidth:  _root.width - ((ScreenTools.defaultFontPixelWidth * 10) * 2)
                 implicitHeight: 3
                 color:          qgcPal.customProgressBarBackground
                 radius:         3
@@ -76,11 +79,18 @@ Item {
             }
         }
 
-        Text {
-            id:             trailing
-            text:           qsTr("Footer")
-            font.pointSize: ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
-            color:          qgcPal.colorWhite
+        Item {
+            width: ScreenTools.defaultFontPixelWidth * 10
+            height: ScreenTools.defaultFontPixelHeight
+
+            Text {
+                id:                     trailing
+                anchors.right:          parent.right
+                anchors.rightMargin:    ScreenTools.defaultFontPixelWidt
+                text:                   qsTr("Footer")
+                font.pointSize:         ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
+                color:                  qgcPal.colorWhite
+            }
 
             Layout.alignment: Qt.AlignRight
         }
