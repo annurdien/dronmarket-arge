@@ -39,6 +39,7 @@ T.ComboBox {
     property real   _popupWidth:        sizeToContents ? _largestTextWidth + itemDelegateMetrics.leftPadding + itemDelegateMetrics.rightPadding : control.width
     property bool   _onCompleted:       false
 
+
     TextMetrics {
         id:                 textMetrics
         font.family:        control.font.family

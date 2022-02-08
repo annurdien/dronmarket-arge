@@ -14,6 +14,9 @@ Item {
     property alias trailingText:        trailing.text
     property alias value:               progressBar.value
 
+    property real _mobileFontSize: ScreenTools.defaultFontPointSize * ScreenTools.smallFontPointRatio
+    property real _desktopFontSize: ScreenTools.defaultFontPointSize * ScreenTools.mediumFontPointRatio
+
     QGCPalette {id : qgcPal }
 
     anchors.leftMargin:     10
@@ -42,11 +45,11 @@ Item {
 
         Item {
             height: ScreenTools.defaultFontPixelHeight
-            width: ScreenTools.defaultFontPixelWidth * 10
+            width: ScreenTools.isMobile ? ScreenTools.smallFontPixelWidth : ScreenTools.defaultFontPixelWidth * 10
             Text {
                 id:             leading
                 text:           qsTr("Heading")
-                font.pointSize: ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
+                font.pointSize: ScreenTools.isMobile ? _mobileFontSize : _desktopFontSize
                 color:          qgcPal.colorWhite
             }
             Layout.alignment: Qt.AlignLeft
@@ -80,7 +83,7 @@ Item {
         }
 
         Item {
-            width: ScreenTools.defaultFontPixelWidth * 10
+            width: ScreenTools.isMobile ? ScreenTools.smallFontPixelWidth : ScreenTools.defaultFontPixelWidth * 10
             height: ScreenTools.defaultFontPixelHeight
 
             Text {
@@ -88,7 +91,7 @@ Item {
                 anchors.right:          parent.right
                 anchors.rightMargin:    ScreenTools.defaultFontPixelWidt
                 text:                   qsTr("Footer")
-                font.pointSize:         ScreenTools.mediumFontPointSize * ScreenTools.mediumFontPointRatio * 0.70
+                font.pointSize:         ScreenTools.isMobile ? _mobileFontSize : _desktopFontSize
                 color:                  qgcPal.colorWhite
             }
 

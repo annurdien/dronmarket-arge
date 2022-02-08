@@ -43,10 +43,13 @@ Item {
     property Fact _armingCheck: controller.getParameterFact(-1, "ARMING_CHECK")
 
     property real _margins:         ScreenTools.defaultFontPixelHeight
+    property real _mobileMargins:   ScreenTools.defaultFontPixelHeight * 0.2
+    property real _innerMargins:    _innerMargins / 2
     property real _innerMargin:     _margins / 2
     property bool _showIcon:        !ScreenTools.isTinyScreen
     property bool _roverFirmware:   controller.parameterExists(-1, "MODE1") // This catches all usage of ArduRover firmware vehicle types: Rover, Boat...
 
+    property real _fontSize: ScreenTools.isTinyScreen ? (ScreenTools.defaultFontPointSize * ScreenTools.smallFontPointRatio) : (ScreenTools.defaultFontPointSize)
 
     property string _restartRequired: qsTr("Requires vehicle reboot")
 
@@ -91,33 +94,28 @@ Item {
 
             GridLayout {
                 id:             gridLayout
-                columnSpacing:  _margins
-                rowSpacing:     _margins
+                columnSpacing:  ScreenTools.isMobile? _mobileMargins : _margins
+                rowSpacing:     ScreenTools.isMobile? _mobileMargins : _margins
                 columns:        2
 
-                QGCLabel { text: qsTr("Low action:") }
-                FactComboBox {
+                Text {text: qsTr("Low action"); font.pointSize: _fontSize; color: ggcPal.colorWhite}
+                CustomFactComboBox {
                     fact:               failsafeBattLowAct
                     indexModel:         false
                     Layout.fillWidth:   true
                 }
 
-                QGCLabel { text: qsTr("Critical action:") }
-                FactComboBox {
+                Text {text: qsTr("Critical action:"); font.pointSize: _fontSize; color: ggcPal.colorWhite}
+
+                CustomFactComboBox {
                     fact:               failsafeBattCritAct
                     indexModel:         false
                     Layout.fillWidth:   true
                 }
 
-//                QGCLabel { text: qsTr("Low voltage threshold:") }
-//                FactTextField {
-//                    fact:               failsafeBattLowVoltage
-//                    showUnits:          true
-//                    Layout.fillWidth:   true
-//                }
+                Text {text: qsTr("Critical action:"); font.pointSize: _fontSize; color: ggcPal.colorWhite}
 
-                QGCLabel { text: qsTr("Low mAh threshold:") }
-                FactTextField {
+                CustomFactTextField {
                     fact:               failsafeBattLowMah
                     showUnits:          true
                     Layout.fillWidth:   true
@@ -153,7 +151,7 @@ Item {
 
         Loader {
 
-            anchors.margins:    _margins
+            anchors.margins: ScreenTools.isMobile? _mobileMargins : _margins
             anchors.fill: parent
 
             sourceComponent:    _batt1ParamsAvailable ? batteryFailsafeComponent : restartRequiredComponent

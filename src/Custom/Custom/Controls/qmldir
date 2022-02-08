@@ -5,3 +5,8 @@ BottomNavigationBar                            1.0 BottomNavigationBar.qml
 SwitchButton                                   1.0 SwitchButton.qml
 CustomButton                                   1.0 CustomButton.qml
 CustomImageButton                              1.0 CustomImageButton.qml
+CustomComboBox                                 1.0 CustomComboBox.qml
+CustomFactComboBox                             1.0 CustomFactComboBox.qml
+CustomFactTextField                            1.0 CustomFactTextField.qml
+CustomTextField                                1.0 CustomTextField.qml
+CustomRowSwitchButton                          1.0 CustomRowSwitchButton.qml

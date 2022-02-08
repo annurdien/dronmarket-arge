@@ -17,5 +17,10 @@
         <file alias="Custom/Settings/GncSystemSettings.qml">src/Custom/Custom/Settings/GncSystemSettings.qml</file>
         <file alias="Custom/Controls/CustomImageButton.qml">src/Custom/Custom/Controls/CustomImageButton.qml</file>
         <file alias="Custom/Indicators/CustomProgressBarIndicator.qml">src/Custom/Custom/Indicators/CustomProgressBarIndicator.qml</file>
+        <file alias="Custom/Controls/CustomComboBox.qml">src/Custom/Custom/Controls/CustomComboBox.qml</file>
+        <file alias="Custom/Controls/CustomFactComboBox.qml">src/Custom/Custom/Controls/CustomFactComboBox.qml</file>
+        <file alias="Custom/Controls/CustomFactTextField.qml">src/Custom/Custom/Controls/CustomFactTextField.qml</file>
+        <file alias="Custom/Controls/CustomTextField.qml">src/Custom/Custom/Controls/CustomTextField.qml</file>
+        <file alias="Custom/Controls/CustomRowSwitchButton.qml">src/Custom/Custom/Controls/CustomRowSwitchButton.qml</file>
     </qresource>
 </RCC>
