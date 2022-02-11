@@ -3,12 +3,12 @@ import QtQuick.Layouts              1.15
 
 import QGroundControl.ScreenTools   1.0
 
+import Custom.Controls              1.0
+import Custom.Indicators            1.0
+
 
 Item {
     id: _root
-
-    property string leftText: ""
-    property string rightText: ""
 
     property alias text: text.text
 
@@ -29,15 +29,13 @@ Item {
             font.pointSize: _fontPointSize
         }
 
-        SwitchButton {
+        CustomTextField {
             id:                     switchButton
             implicitWidth:          (_root.width - _root.width/2) - (text.implicitWidth/2)
             implicitHeight:         _root.height
-            leftText:               _root.leftText
-            rightText:              _root.rightText
 
             Layout.alignment: Qt.AlignRight
+            Layout.rightMargin: ScreenTools.defaultFontPixelWidth
         }
-
     }
 }

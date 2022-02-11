@@ -208,7 +208,7 @@ ApplicationWindow {
     }
 
     function showCommsSettings() {
-        showRightDrawer(qsTr("Communications"),"qrc:/qml/Custom/Settings/PowerSettings.qml", true, "qrc:/icons/Battery.svg")
+        showRightDrawer(qsTr("Communications"),"qrc:/qml/Custom/Settings/CommsSettings.qml", true, "qrc:/icons/Comms.svg")
     }
 
     function showRadarSettings() {
@@ -450,6 +450,16 @@ ApplicationWindow {
         anchors.bottomMargin:   ScreenTools.defaultFontPixelWidth * ScreenTools.largeFontPointRatio * 1.5
         implicitWidth:          parent.width * 0.20
         implicitHeight:         ScreenTools.toolbarHeight * 0.70
+
+        onCheckedChanged: {
+            if(checked) {
+                terrainChangeButtons.visible = true
+                flightView.visible = false
+            } else {
+                terrainChangeButtons.visible = false
+                flightView.visible = true
+            }
+        }
     }
 
     //------------------------------------------------------------------------
@@ -612,6 +622,36 @@ ApplicationWindow {
         height:             parent.height * 0.80
         anchors.right:      parent.right
         visible:            false
+    }
+
+    Item {
+        id:                 terrainChangeButtons
+        width:              parent.width * 0.85
+        height:             parent.height * 0.80
+        anchors.right:      parent.right
+        visible:            false
+
+        RowLayout {
+            anchors.fill: parent
+
+            Image {
+
+                height: ScreenTools.defaultFontPixelHeight * 10
+                width: ScreenTools.defaultFontPixelHeight * 10
+                source: "qrc:/icons/FlatTerrain.png"
+
+                Layout.alignment: Qt.AlignVCenter
+            }
+
+            Image {
+                height: ScreenTools.defaultFontPixelHeight * 10
+                width: ScreenTools.defaultFontPixelHeight * 10
+                source: "qrc:/icons/HarshTerrain.png"
+
+                Layout.alignment: Qt.AlignVCenter
+            }
+
+        }
     }
 
 

@@ -22,5 +22,7 @@
         <file alias="Custom/Controls/CustomFactTextField.qml">src/Custom/Custom/Controls/CustomFactTextField.qml</file>
         <file alias="Custom/Controls/CustomTextField.qml">src/Custom/Custom/Controls/CustomTextField.qml</file>
         <file alias="Custom/Controls/CustomRowSwitchButton.qml">src/Custom/Custom/Controls/CustomRowSwitchButton.qml</file>
+        <file alias="Custom/Controls/CustomRowTextField.qml">CustomRowTextField.qml</file>
+        <file alias="Custom/Settings/CommsSettings.qml">src/Custom/Custom/Settings/CommsSettings.qml</file>
     </qresource>
 </RCC>

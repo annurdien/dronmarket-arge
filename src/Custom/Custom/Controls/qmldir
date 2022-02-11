@@ -10,3 +10,4 @@ CustomFactComboBox                             1.0 CustomFactComboBox.qml
 CustomFactTextField                            1.0 CustomFactTextField.qml
 CustomTextField                                1.0 CustomTextField.qml
 CustomRowSwitchButton                          1.0 CustomRowSwitchButton.qml
+CustomRowTextField                             1.0 CustomRowTextField.qml

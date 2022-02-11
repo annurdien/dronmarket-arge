@@ -12,5 +12,9 @@
         <file alias="Radar.svg">CustomResources/CustomIcon/Radar.svg</file>
         <file alias="CheckIcon.svg">CustomResources/CustomIcon/CheckIcon.svg</file>
         <file alias="Spreying.svg">CustomResources/CustomIcon/Spreying.svg</file>
+        <file alias="FlatTerrain.svg">CustomResources/CustomIcon/FlatTerrain.svg</file>
+        <file alias="HarshTerrain.svg">CustomResources/CustomIcon/HarshTerrain.svg</file>
+        <file alias="HarshTerrain.png">CustomResources/CustomIcon/FlatTerrain.png</file>
+        <file alias="FlatTerrain.png">CustomResources/CustomIcon/HarshTerrain.png</file>
     </qresource>
 </RCC>

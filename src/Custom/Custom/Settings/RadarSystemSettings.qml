@@ -20,26 +20,38 @@ Item {
         anchors.rightMargin:    20
         anchors.bottomMargin:   20
 
-        ColumnLayout {
+        Column {
             anchors.fill: parent
+            spacing: ScreenTools.defaultFontPixelHeight
 
             CustomRowSwitchButton{
                 width : name.width
+                height: ScreenTools.toolbarHeight * 0.5
                 leftText: "ON"
                 rightText: "OFF"
-
-                Layout.maximumWidth: 30
-                Layout.minimumWidth: 15
+                text: "OBSTACLE AVOIDANCE"
             }
 
             CustomRowSwitchButton{
                 width : name.width
-                leftText: "AGRESIVE"
-                rightText: "PASSIVE"
-                text: "INTELLIGENT SPREY MODE"
+                height: ScreenTools.toolbarHeight * 0.5
+                leftText: "FLAT"
+                rightText: "MOUNTAIN"
+                text: "TERRAIN MODE"
+            }
 
-                Layout.maximumWidth: 30
-                Layout.minimumWidth: 15
+            CustomRowTextField{
+                width : name.width
+                height: ScreenTools.toolbarHeight * 0.5
+                text: "OBSTACLE DISPLAY MODE"
+            }
+
+            CustomRowSwitchButton{
+                width : name.width
+                height: ScreenTools.toolbarHeight * 0.5
+                leftText: "SEGMENT"
+                rightText: "SCATTER"
+                text: "OBSTACLE DISPLAY MODE"
             }
         }
     }
